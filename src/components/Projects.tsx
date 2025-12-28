@@ -56,7 +56,6 @@ const ProjectsSection: React.FC = () => {
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<Project | null>(null);
 
-  const [revealed, setRevealed] = useState(false);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   useEffect(() => {
@@ -347,7 +346,7 @@ const ProjectsSection: React.FC = () => {
     },
 
     // ---------------------------
-    // WordPress / Elementor (you already have)
+    // WordPress / Elementor
     // ---------------------------
     {
       title: "Peanich Phum Ecommerce",
@@ -592,6 +591,12 @@ const ProjectsSection: React.FC = () => {
   );
 
   const canShowMore = filtered.length > visibleCount;
+  const canShowLess = visibleCount > PAGE_SIZE;
+
+  const showMore = () =>
+    setVisibleCount((n) => Math.min(n + PAGE_SIZE, filtered.length));
+  const showLess = () =>
+    setVisibleCount((n) => Math.max(PAGE_SIZE, n - PAGE_SIZE));
 
   const headlineText = "Clean project gallery with details on click.";
   const headlineWords = useMemo(() => headlineText.split(" "), [headlineText]);
@@ -685,9 +690,8 @@ const ProjectsSection: React.FC = () => {
         <motion.div
           variants={sectionWrap}
           initial="hidden"
-          animate={revealed ? "show" : "hidden"}
-          onViewportEnter={() => setRevealed(true)}
-          viewport={{ once: true, amount: 0.25 }}
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
           className="space-y-10"
         >
           {/* Header */}
@@ -959,22 +963,39 @@ const ProjectsSection: React.FC = () => {
             )}
           </motion.div>
 
-          {/* Show more */}
-          {filtered.length > 0 && canShowMore && (
+          {/* Show more / Show less */}
+          {filtered.length > 0 && (canShowMore || canShowLess) && (
             <motion.div
               variants={item}
-              className="flex items-center justify-center pt-2"
+              className="flex flex-wrap items-center justify-center gap-3 pt-2"
             >
-              <button
-                type="button"
-                onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
-                className={loadMoreBtnClass}
-              >
-                Show more
-                <span className={isDark ? "text-white/50" : "text-slate-500"}>
-                  ({Math.min(visibleCount, filtered.length)}/{filtered.length})
-                </span>
-              </button>
+              {canShowLess && (
+                <button
+                  type="button"
+                  onClick={showLess}
+                  className={loadMoreBtnClass}
+                >
+                  Show less
+                  <span className={isDark ? "text-white/50" : "text-slate-500"}>
+                    ({Math.min(visibleCount, filtered.length)}/{filtered.length}
+                    )
+                  </span>
+                </button>
+              )}
+
+              {canShowMore && (
+                <button
+                  type="button"
+                  onClick={showMore}
+                  className={loadMoreBtnClass}
+                >
+                  Show more
+                  <span className={isDark ? "text-white/50" : "text-slate-500"}>
+                    ({Math.min(visibleCount, filtered.length)}/{filtered.length}
+                    )
+                  </span>
+                </button>
+              )}
             </motion.div>
           )}
         </motion.div>
