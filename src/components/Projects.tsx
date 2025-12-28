@@ -246,6 +246,21 @@ const ProjectsSection: React.FC = () => {
       },
       visibility: "Public",
     },
+    {
+      title: "My Portfolio",
+      category: "React Js",
+      year: 2024,
+      imageUrl: "/projects/my-portfolio.png",
+      summary:
+        "My personal portfolio built with React, featuring responsive sections, smooth UI interactions, and a clean component structure.",
+      tech: ["React", "TypeScript/JS", "Component Design", "Routing"],
+      highlights: ["Modular UI components", "Clean project structure"],
+      links: {
+        github: "https://github.com/sruoyveasna/portfolio",
+        live: "https://sruoyveasna.vercel.app/",
+      },
+      visibility: "Public",
+    },
 
     // ---------------------------
     // ASP.NET Core API
