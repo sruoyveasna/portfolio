@@ -178,36 +178,6 @@ const ProjectsSection: React.FC = () => {
       },
       visibility: "Public",
     },
-    {
-      title: "EdenCoffee API",
-      category: "Laravel API",
-      year: 2024,
-      imageUrl:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1400&auto=format&fit=crop&q=60",
-      summary:
-        "Laravel API for coffee shop data: products, categories, orders, and admin-ready endpoints.",
-      tech: ["Laravel", "REST API", "MySQL", "Auth", "Validation"],
-      highlights: ["Clean API structure", "Reusable controllers/services"],
-      links: {
-        github: "https://github.com/sruoyveasna/edencoffee",
-      },
-      visibility: "Public",
-    },
-    {
-      title: "Cafe POS Eden API",
-      category: "Laravel API",
-      year: 2024,
-      imageUrl:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&auto=format&fit=crop&q=60",
-      summary:
-        "Laravel API backend for POS: orders, inventory, and cashier-friendly endpoints.",
-      tech: ["Laravel", "REST API", "MySQL", "Auth", "CRUD"],
-      highlights: ["POS-focused endpoints", "Ready for frontend integration"],
-      links: {
-        github: "https://github.com/sruoyveasna/Cafe-pos-eden",
-      },
-      visibility: "Public",
-    },
 
     // ---------------------------
     // Vue Js
@@ -374,6 +344,138 @@ const ProjectsSection: React.FC = () => {
       highlights: ["Responsive UI sections", "Optimized Elementor templates"],
       links: {
         live: "https://peanichphum.com/",
+      },
+      visibility: "Private/Client",
+    },
+    // ---------------------------
+    // WordPress / Elementor (Client Builds)
+    // ---------------------------
+    {
+      title: "BSTNT Logistics Website",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Client website for a logistics company with clean service sections and a professional company presence.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: [
+        "Service-focused layout",
+        "Mobile-first responsive sections",
+      ],
+      links: {
+        live: "https://bstnt.com/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "Vantha Natural Supplements (Activa France)",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Company profile site showcasing natural supplement products (Activa from France) with product-related pages and brand presentation.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: ["Product showcase pages", "Clean company profile structure"],
+      links: {
+        live: "https://vanthanaturalsupplements.com.kh/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "Mind56 Coaching & Soft Skills",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1552581234-26160f608093?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Personal service website promoting coaching and mind/soft-skill services with clear sections and strong readability.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: ["Service + coaching presentation", "Simple and clear UX"],
+      links: {
+        live: "https://mind56.info/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "Bopha Agriculture Company Profile",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1524593166156-312f362cada0?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Company profile website showcasing agriculture-related products with structured pages and a professional brand layout.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: [
+        "Product-focused company profile",
+        "Organized content sections",
+      ],
+      links: {
+        live: "https://www.bopha.com.kh/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "CETA Advisory Logistics (KH)",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1601598851547-4302969d0614?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Company profile website for logistics services with Khmer content structure and service-oriented layout.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: [
+        "Localized (KH) page structure",
+        "Service sections + contact flow",
+      ],
+      links: {
+        live: "https://ceta-advisory.com/km/home2/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "EzeTechSoft Portfolio Website",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Personal portfolio website build with Elementor featuring services, projects, and a modern responsive layout.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: ["Portfolio sections", "Clean responsive structure"],
+      links: {
+        live: "https://ezetechsoft.com/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "DolphinTek Services Template",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Template-based website showcasing services with reusable Elementor sections and consistent visual styling.",
+      tech: ["WordPress", "Elementor", "Template Setup", "UI Design"],
+      highlights: ["Reusable section templates", "Service blocks + CTA layout"],
+      links: {
+        live: "https://dolphintek.biz/",
+      },
+      visibility: "Private/Client",
+    },
+    {
+      title: "KSDA Community Profile",
+      category: "WordPress / Elementor",
+      year: 2025,
+      imageUrl:
+        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&auto=format&fit=crop&q=60",
+      summary:
+        "Community profile website with structured pages and content sections for community presence and updates.",
+      tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
+      highlights: ["Community profile structure", "Clean content hierarchy"],
+      links: {
+        live: "http://ksda.dolphintek.biz/",
       },
       visibility: "Private/Client",
     },
