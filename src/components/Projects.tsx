@@ -354,8 +354,7 @@ const ProjectsSection: React.FC = () => {
       title: "BSTNT Logistics Website",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/bstnt-logistics-website.png",
       summary:
         "Client website for a logistics company with clean service sections and a professional company presence.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -372,8 +371,7 @@ const ProjectsSection: React.FC = () => {
       title: "Vantha Natural Supplements (Activa France)",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/vantha-naturel-supplements.png",
       summary:
         "Company profile site showcasing natural supplement products (Activa from France) with product-related pages and brand presentation.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -387,8 +385,7 @@ const ProjectsSection: React.FC = () => {
       title: "Mind56 Coaching & Soft Skills",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1552581234-26160f608093?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/mind56-coaching-soft-skills.png",
       summary:
         "Personal service website promoting coaching and mind/soft-skill services with clear sections and strong readability.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -402,8 +399,7 @@ const ProjectsSection: React.FC = () => {
       title: "Bopha Agriculture Company Profile",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1524593166156-312f362cada0?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/bopha-agriculture-company-profile.png",
       summary:
         "Company profile website showcasing agriculture-related products with structured pages and a professional brand layout.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -420,8 +416,7 @@ const ProjectsSection: React.FC = () => {
       title: "CETA Advisory Logistics (KH)",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1601598851547-4302969d0614?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/ceta-advisory-logistics-kh.png",
       summary:
         "Company profile website for logistics services with Khmer content structure and service-oriented layout.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -430,7 +425,7 @@ const ProjectsSection: React.FC = () => {
         "Service sections + contact flow",
       ],
       links: {
-        live: "https://ceta-advisory.com/km/home2/",
+        live: "https://ceta-advisory.com/en/home/",
       },
       visibility: "Private/Client",
     },
@@ -438,8 +433,7 @@ const ProjectsSection: React.FC = () => {
       title: "EzeTechSoft Portfolio Website",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/ezetechsoft-portfolio-website.png",
       summary:
         "Personal portfolio website build with Elementor featuring services, projects, and a modern responsive layout.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],
@@ -453,8 +447,7 @@ const ProjectsSection: React.FC = () => {
       title: "DolphinTek Services Template",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/dolphintek-services-template.png",
       summary:
         "Template-based website showcasing services with reusable Elementor sections and consistent visual styling.",
       tech: ["WordPress", "Elementor", "Template Setup", "UI Design"],
@@ -468,8 +461,7 @@ const ProjectsSection: React.FC = () => {
       title: "KSDA Community Profile",
       category: "WordPress / Elementor",
       year: 2025,
-      imageUrl:
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&auto=format&fit=crop&q=60",
+      imageUrl: "/projects/ksda-community-profile-website.png",
       summary:
         "Community profile website with structured pages and content sections for community presence and updates.",
       tech: ["WordPress", "Elementor", "UI Design", "Responsive Layout"],

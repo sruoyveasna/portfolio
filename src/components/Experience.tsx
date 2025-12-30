@@ -111,7 +111,7 @@ const ExperienceSection: React.FC = () => {
       title: "Frontend Developer Intern",
       type: "Internship",
       start: "Apr 2024",
-      end: "Jul 2024",
+      end: "Jun 2024",
       logoUrl: "experiences/dr-tech.png",
       stack: ["React.js", "UI Components", "i18n / Multi-language"],
       highlights: [
