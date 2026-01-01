@@ -162,7 +162,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Cafe Eden POS API (Main)",
       category: "Laravel API",
-      year: "2024–2025",
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -185,7 +185,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Cafe Eden Frontend (Vue)",
       category: "Vue Js",
-      year: 2024,
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -204,7 +204,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "AngkorScience",
       category: "React Js",
-      year: 2024,
+      year: 2025,
       imageUrl: "/projects/angkor-science.png",
       summary:
         "React project showcasing a modern UI with reusable components and clean structure.",
@@ -219,7 +219,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "My Portfolio",
       category: "React Js",
-      year: 2024,
+      year: 2025,
       imageUrl: "/projects/my-portfolio.png",
       summary:
         "My personal portfolio built with React, featuring responsive sections, smooth UI interactions, and a clean component structure.",
@@ -238,7 +238,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "ContosoPizza API",
       category: "ASP.NET Core API",
-      year: 2023,
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -253,7 +253,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "VideoGameCharacter API",
       category: "ASP.NET Core API",
-      year: 2023,
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -272,7 +272,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Donuts POS System",
       category: "Laravel System",
-      year: 2024,
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -302,7 +302,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "PHP Final Project (E-commerce)",
       category: "Laravel System",
-      year: 2024,
+      year: 2023,
       imageUrl:
         "https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -526,7 +526,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Tour Prototype",
       category: "HTML/CSS/JS",
-      year: 2024,
+      year: 2025,
       imageUrl:
         "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -558,7 +558,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Facebook Clone (UI)",
       category: "HTML/CSS/JS",
-      year: 2023,
+      year: 2024,
       imageUrl:
         "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -574,7 +574,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Sample Assignment",
       category: "HTML/CSS/JS",
-      year: 2023,
+      year: 2024,
       imageUrl:
         "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400&auto=format&fit=crop&q=60",
       summary:
@@ -590,7 +590,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "Add to Cart Demo",
       category: "HTML/CSS/JS",
-      year: 2023,
+      year: 2024,
       imageUrl: "/projects/add-to-cart.png",
       summary:
         "Mini cart UI + JavaScript interactions for adding/removing items and updating totals.",
@@ -605,7 +605,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: "GB Converter",
       category: "HTML/CSS/JS",
-      year: 2023,
+      year: 2024,
       imageUrl:
         "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=1400&auto=format&fit=crop&q=60",
       summary:

@@ -10,6 +10,50 @@ import {
 } from "lucide-react";
 import { useTheme } from "@/context/theme";
 
+type BrandToken = {
+  bg: string;
+  fg: string;
+  border?: string;
+  glow?: string;
+};
+
+const BRANDS: Record<string, BrandToken> = {
+  Email: {
+    bg: "#EA4335",
+    fg: "#FFFFFF",
+    border: "#EA4335",
+    glow: "rgba(234,67,53,.35)",
+  },
+  Telegram: {
+    bg: "#229ED9",
+    fg: "#FFFFFF",
+    border: "#229ED9",
+    glow: "rgba(34,158,217,.35)",
+  },
+  GitHub: {
+    bg: "#0B0F19",
+    fg: "#FFFFFF",
+    border: "#0B0F19",
+    glow: "rgba(11,15,25,.35)",
+  },
+  Location: {
+    bg: "#16A34A",
+    fg: "#FFFFFF",
+    border: "#16A34A",
+    glow: "rgba(22,163,74,.30)",
+  },
+};
+
+const brandStyle = (key: keyof typeof BRANDS) => {
+  const t = BRANDS[key];
+  return {
+    ["--brand-bg" as any]: t.bg,
+    ["--brand-fg" as any]: t.fg,
+    ["--brand-border" as any]: t.border ?? t.bg,
+    ["--brand-glow" as any]: t.glow ?? "rgba(59,130,246,.25)",
+  } as React.CSSProperties;
+};
+
 const Footer: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
   const { isDark } = useTheme();
@@ -36,7 +80,6 @@ const Footer: React.FC = () => {
     email: "veasnagva@gmail.com",
     telegram: "veasnasruoy",
     location: "Chroy Changvar, Phnom Penh, Cambodia",
-    // ✅ replace with your real links
     github: "https://github.com/your-username",
   };
 
@@ -49,64 +92,86 @@ const Footer: React.FC = () => {
     { label: "Contact", href: "#contact" },
   ];
 
+  const scrollToHash = (href: string) => {
+    // Only smooth-scroll in-page anchors
+    if (!href.startsWith("#")) return;
+    const el = document.querySelector(href) as HTMLElement | null;
+    if (!el) return;
+
+    const yOffset = -80; // matches your hero offset feel
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   const SocialPill = ({
     href,
     label,
     icon,
+    brandKey,
   }: {
     href: string;
     label: string;
     icon: React.ReactNode;
+    brandKey: keyof typeof BRANDS;
   }) => (
-    <a
+    <motion.a
       href={href}
+      style={brandStyle(brandKey)}
       target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className={`group inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold ring-1 transition-all ${
-        isDark
-          ? "bg-white/5 text-white/75 ring-white/10 hover:bg-white/10 hover:ring-white/20"
-          : "bg-white/70 text-slate-700 ring-slate-200 hover:bg-white hover:ring-slate-300"
-      }`}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.01 }}
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+      className={`group inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold ring-1
+        transition-all duration-200
+        hover:bg-[var(--brand-bg)] hover:text-[var(--brand-fg)] hover:ring-[var(--brand-border)]
+        hover:shadow-[0_16px_55px_var(--brand-glow)]
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70
+        ${
+          isDark
+            ? "bg-white/5 text-white/75 ring-white/10 hover:ring-[var(--brand-border)]"
+            : "bg-white/70 text-slate-700 ring-slate-200"
+        }`}
+      aria-label={label}
     >
       <span
-        className={`inline-flex h-8 w-8 items-center justify-center rounded-full ${
-          isDark ? "bg-white/5" : "bg-slate-900/5"
-        }`}
+        className={`inline-flex h-8 w-8 items-center justify-center rounded-full transition-colors
+          ${isDark ? "bg-white/5" : "bg-slate-900/5"}
+          group-hover:bg-white/15`}
       >
         {icon}
       </span>
+
       <span className="whitespace-nowrap">{label}</span>
-      <ArrowUpRight
-        className={`${
-          isDark ? "text-white/40" : "text-slate-400"
-        } h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5`}
-      />
-    </a>
+
+      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+    </motion.a>
   );
 
   const ScrollTop = () => (
-    <button
+    <motion.button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-extrabold ring-1 transition-all ${
-        isDark
-          ? "bg-white/5 text-white ring-white/10 hover:bg-white/10 hover:ring-white/20"
-          : "bg-white/70 text-slate-800 ring-slate-200 hover:bg-white hover:ring-slate-300"
-      }`}
+      whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.01 }}
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-extrabold ring-1 transition-all
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70
+        ${
+          isDark
+            ? "bg-white/5 text-white ring-white/10 hover:bg-white/10 hover:ring-white/20"
+            : "bg-white/70 text-slate-800 ring-slate-200 hover:bg-white hover:ring-slate-300"
+        }`}
     >
       Back to top
       <ArrowUpRight className="h-4 w-4 -rotate-45" />
-    </button>
+    </motion.button>
   );
 
   return (
     <footer className="relative overflow-hidden">
-      {/* top divider */}
       <div
         className={`h-px w-full ${isDark ? "bg-white/10" : "bg-slate-200"}`}
       />
 
-      {/* subtle footer glow */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" />
 
@@ -128,14 +193,12 @@ const Footer: React.FC = () => {
                     : "border-slate-200 bg-white/80"
                 }`}
               >
-                {/* ✅ Replaced SV text with /icon.png */}
                 <img
                   src="/icon.png"
                   alt="Logo"
                   className="h-7 w-7 rounded-xl object-contain"
                   loading="lazy"
                   onError={(e) => {
-                    // fallback: hide image if missing
                     (e.currentTarget as HTMLImageElement).style.display =
                       "none";
                   }}
@@ -184,14 +247,26 @@ const Footer: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-2">
               {navLinks.map((l) => (
-                <a
+                <motion.a
                   key={l.href}
                   href={l.href}
-                  className={`group inline-flex items-center justify-between rounded-xl border px-3 py-2 text-sm font-semibold transition-all ${
-                    isDark
-                      ? "border-white/10 bg-white/5 text-white/75 hover:bg-white/10 hover:border-white/20"
-                      : "border-slate-200 bg-white/70 text-slate-700 hover:bg-white hover:border-slate-300"
-                  }`}
+                  onClick={(e) => {
+                    if (l.href.startsWith("#")) {
+                      e.preventDefault();
+                      scrollToHash(l.href);
+                    }
+                  }}
+                  whileHover={
+                    shouldReduceMotion ? undefined : { y: -2, scale: 1.01 }
+                  }
+                  whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+                  className={`group inline-flex items-center justify-between rounded-xl border px-3 py-2 text-sm font-semibold transition-all
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70
+                    ${
+                      isDark
+                        ? "border-white/10 bg-white/5 text-white/75 hover:bg-white/10 hover:border-white/20"
+                        : "border-slate-200 bg-white/70 text-slate-700 hover:bg-white hover:border-slate-300"
+                    }`}
                 >
                   <span>{l.label}</span>
                   <ArrowUpRight
@@ -199,7 +274,7 @@ const Footer: React.FC = () => {
                       isDark ? "text-white/40" : "text-slate-400"
                     } h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5`}
                   />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -218,24 +293,28 @@ const Footer: React.FC = () => {
               <SocialPill
                 href={`mailto:${details.email}`}
                 label="Email"
-                icon={<Mail className="h-4 w-4 text-cyan-400" />}
+                brandKey="Email"
+                icon={<Mail className="h-4 w-4" />}
               />
               <SocialPill
                 href={`https://t.me/${details.telegram}`}
                 label="Telegram"
-                icon={<MessageCircle className="h-4 w-4 text-sky-400" />}
+                brandKey="Telegram"
+                icon={<MessageCircle className="h-4 w-4" />}
               />
               <SocialPill
                 href={details.github}
                 label="GitHub"
-                icon={<Github className="h-4 w-4 text-white/80" />}
+                brandKey="GitHub"
+                icon={<Github className="h-4 w-4" />}
               />
               <SocialPill
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                   details.location
                 )}`}
                 label="Location"
-                icon={<MapPin className="h-4 w-4 text-purple-400" />}
+                brandKey="Location"
+                icon={<MapPin className="h-4 w-4" />}
               />
             </div>
 
@@ -255,12 +334,13 @@ const Footer: React.FC = () => {
                 <a
                   className={`${
                     isDark ? "text-white" : "text-slate-900"
-                  } font-semibold`}
+                  } font-semibold hover:underline`}
                   href={`mailto:${details.email}`}
                 >
                   {details.email}
                 </a>
               </div>
+
               <div
                 className={`${
                   isDark ? "text-white/60" : "text-slate-600"
@@ -270,12 +350,32 @@ const Footer: React.FC = () => {
                 <a
                   className={`${
                     isDark ? "text-white" : "text-slate-900"
-                  } font-semibold`}
+                  } font-semibold hover:underline`}
                   href={`https://t.me/${details.telegram}`}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   @{details.telegram}
+                </a>
+              </div>
+
+              <div
+                className={`${
+                  isDark ? "text-white/60" : "text-slate-600"
+                } mt-1 text-sm`}
+              >
+                Location:{" "}
+                <a
+                  className={`${
+                    isDark ? "text-white" : "text-slate-900"
+                  } font-semibold hover:underline`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    details.location
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {details.location}
                 </a>
               </div>
             </div>

@@ -8,6 +8,86 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "@/context/theme";
 
+type BrandToken = {
+  bg: string; // hover background
+  fg: string; // hover foreground (text/icon)
+  border?: string; // hover border
+  glow?: string; // hover shadow color
+};
+
+const BRANDS: Record<string, BrandToken> = {
+  // Skills
+  HTML: {
+    bg: "#E34F26",
+    fg: "#FFFFFF",
+    border: "#E34F26",
+    glow: "rgba(227,79,38,.35)",
+  },
+  CSS: {
+    bg: "#1572B6",
+    fg: "#FFFFFF",
+    border: "#1572B6",
+    glow: "rgba(21,114,182,.35)",
+  },
+  JavaScript: {
+    bg: "#F7DF1E",
+    fg: "#111827",
+    border: "#F7DF1E",
+    glow: "rgba(247,223,30,.35)",
+  },
+  PHP: {
+    bg: "#777BB4",
+    fg: "#FFFFFF",
+    border: "#777BB4",
+    glow: "rgba(119,123,180,.35)",
+  },
+  Laravel: {
+    bg: "#FF2D20",
+    fg: "#FFFFFF",
+    border: "#FF2D20",
+    glow: "rgba(255,45,32,.35)",
+  },
+  "C#.NET": {
+    bg: "#512BD4",
+    fg: "#FFFFFF",
+    border: "#512BD4",
+    glow: "rgba(81,43,212,.35)",
+  },
+
+  // Social
+  GitHub: {
+    bg: "#0B0F19",
+    fg: "#FFFFFF",
+    border: "#0B0F19",
+    glow: "rgba(11,15,25,.35)",
+  },
+  LinkedIn: {
+    bg: "#0A66C2",
+    fg: "#FFFFFF",
+    border: "#0A66C2",
+    glow: "rgba(10,102,194,.35)",
+  },
+  Email: {
+    bg: "#EA4335",
+    fg: "#FFFFFF",
+    border: "#EA4335",
+    glow: "rgba(234,67,53,.35)",
+  },
+};
+
+const brandStyle = (key: string) => {
+  const t = BRANDS[key];
+  if (!t) return undefined;
+
+  // CSS vars so Tailwind can reference them in hover classes
+  return {
+    ["--brand-bg" as any]: t.bg,
+    ["--brand-fg" as any]: t.fg,
+    ["--brand-border" as any]: t.border ?? t.bg,
+    ["--brand-glow" as any]: t.glow ?? "rgba(59,130,246,.28)",
+  } as React.CSSProperties;
+};
+
 const Hero = () => {
   const shouldReduceMotion = useReducedMotion();
   const { isDark } = useTheme();
@@ -180,7 +260,6 @@ const Hero = () => {
   return (
     <section
       id="home"
-      // ✅ allow stats strip to translate down without clipping
       className="relative overflow-x-hidden overflow-y-visible min-h-[100svh] lg:min-h-screen"
     >
       <div
@@ -227,7 +306,6 @@ const Hero = () => {
         }
       `}</style>
 
-      {/* ✅ Keep layout SAME */}
       <div className="mx-auto max-w-7xl px-4 pt-20 pb-8 sm:px-6 lg:px-8 lg:min-h-screen lg:flex lg:flex-col lg:justify-center lg:pt-0 lg:pb-0">
         <motion.div
           variants={container}
@@ -341,6 +419,7 @@ const Hero = () => {
               scalable backend systems.
             </motion.p>
 
+            {/* ✅ Skills: brand hover */}
             <motion.div variants={item} className="mt-4">
               <p
                 className={`text-sm sm:text-base ${
@@ -355,15 +434,20 @@ const Hero = () => {
                   (s) => (
                     <motion.span
                       key={s}
+                      style={brandStyle(s)}
                       variants={item}
                       whileHover={
                         shouldReduceMotion ? undefined : { y: -2, scale: 1.02 }
                       }
-                      className={`rounded-full border px-3 py-1 text-sm font-semibold backdrop-blur ${
-                        isDark
-                          ? "border-white/10 bg-white/5 text-white/80"
-                          : "border-slate-200 bg-white/70 text-slate-700"
-                      }`}
+                      className={`rounded-full border px-3 py-1 text-sm font-semibold backdrop-blur
+                        transition-colors duration-200
+                        hover:bg-[var(--brand-bg)] hover:text-[var(--brand-fg)] hover:border-[var(--brand-border)]
+                        hover:shadow-[0_16px_50px_var(--brand-glow)]
+                        ${
+                          isDark
+                            ? "border-white/10 bg-white/5 text-white/80"
+                            : "border-slate-200 bg-white/70 text-slate-700"
+                        }`}
                     >
                       {s}
                     </motion.span>
@@ -372,6 +456,7 @@ const Hero = () => {
               </div>
             </motion.div>
 
+            {/* ✅ Social icons: brand hover */}
             <motion.div
               variants={item}
               className="mt-6 flex items-center justify-center gap-4 lg:justify-start"
@@ -395,6 +480,7 @@ const Hero = () => {
               ].map(({ label, href, Icon }) => (
                 <motion.a
                   key={label}
+                  style={brandStyle(label)}
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={
@@ -406,11 +492,15 @@ const Hero = () => {
                     shouldReduceMotion ? undefined : { y: -3, scale: 1.03 }
                   }
                   whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                  className={`group inline-flex items-center justify-center rounded-lg border px-3 py-3 shadow-sm backdrop-blur transition ${
-                    isDark
-                      ? "border-white/10 bg-white/5 text-white/80 hover:border-white/20 hover:bg-white/10 hover:text-white"
-                      : "border-slate-200 bg-white/70 text-slate-700 hover:bg-white hover:text-slate-900"
-                  } focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70`}
+                  className={`group inline-flex items-center justify-center rounded-lg border px-3 py-3 shadow-sm backdrop-blur
+                    transition-colors duration-200
+                    hover:bg-[var(--brand-bg)] hover:text-[var(--brand-fg)] hover:border-[var(--brand-border)]
+                    hover:shadow-[0_16px_50px_var(--brand-glow)]
+                    ${
+                      isDark
+                        ? "border-white/10 bg-white/5 text-white/80 hover:text-[var(--brand-fg)]"
+                        : "border-slate-200 bg-white/70 text-slate-700"
+                    } focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70`}
                 >
                   <Icon
                     size={20}
@@ -455,9 +545,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* ✅ IMPORTANT FIX:
-            Tailwind translate-y did NOT work on motion.div because Framer Motion sets inline transform.
-            So we translate a wrapper div instead. */}
         <div className="relative mt-10 lg:mt-6 lg:translate-y-[70px]">
           <motion.div
             variants={statsWrap}
