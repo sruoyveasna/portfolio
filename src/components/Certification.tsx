@@ -92,9 +92,8 @@ const Certificates: React.FC = () => {
         field: "Cloud",
         year: 2024,
         issuer: "AWS Data Center Tour 1",
-        imageUrl:
-          "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&auto=format&fit=crop&q=60",
-        href: "https://www.youtube.com/",
+        imageUrl: "/certificates/img/aws_cloud.jpg",
+        href: "/certificates/aws_cloud_computing.pdf",
         accent: {
           color: "text-blue-600 dark:text-blue-400",
           bg: "bg-blue-50 dark:bg-blue-500/10",
@@ -108,9 +107,8 @@ const Certificates: React.FC = () => {
         field: "Backend",
         year: 2023,
         issuer: "Engineering Of Technology & Electronic Center",
-        imageUrl:
-          "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/back_end.jpg",
+        href: "/certificates/backend_c_cpp_oop.pdf",
         accent: {
           color: "text-emerald-600 dark:text-emerald-400",
           bg: "bg-emerald-50 dark:bg-emerald-500/10",
@@ -124,9 +122,8 @@ const Certificates: React.FC = () => {
         field: "Frontend",
         year: 2024,
         issuer: "DR Tech",
-        imageUrl:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/frontend_intern.jpg",
+        href: "/certificates/frontend_internship.pdf",
         accent: {
           color: "text-purple-600 dark:text-purple-400",
           bg: "bg-purple-50 dark:bg-purple-500/10",
@@ -140,9 +137,8 @@ const Certificates: React.FC = () => {
         field: "Fullstack",
         year: 2025,
         issuer: "Eden Cafe",
-        imageUrl:
-          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/eden_pos_thesis.png",
+        href: "/certificates/fullstack_thesis_project.pdf",
         accent: {
           color: "text-amber-600 dark:text-amber-400",
           bg: "bg-amber-50 dark:bg-amber-500/10",
@@ -156,9 +152,8 @@ const Certificates: React.FC = () => {
         field: "English",
         year: 2020,
         issuer: "Elite Tuition Center",
-        imageUrl:
-          "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/English_general.jpg",
+        href: "/certificates/English_general_program.pdf",
         accent: {
           color: "text-blue-600 dark:text-blue-400",
           bg: "bg-blue-50 dark:bg-blue-500/10",
@@ -172,9 +167,8 @@ const Certificates: React.FC = () => {
         field: "Training",
         year: 2020,
         issuer: "The Tribal Education Group",
-        imageUrl:
-          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/mindset_training.jpg",
+        href: "/certificates/mindset_training.pdf",
         accent: {
           color: "text-emerald-600 dark:text-emerald-400",
           bg: "bg-emerald-50 dark:bg-emerald-500/10",
@@ -188,9 +182,8 @@ const Certificates: React.FC = () => {
         field: "Education",
         year: 2020,
         issuer: "Ministry of Education",
-        imageUrl:
-          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=60",
-        href: "#",
+        imageUrl: "/certificates/img/diploma_highschool.jpg",
+        href: "/certificates/high_school_diploma.pdf",
         accent: {
           color: "text-emerald-600 dark:text-emerald-400",
           bg: "bg-emerald-50 dark:bg-emerald-500/10",
