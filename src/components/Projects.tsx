@@ -265,6 +265,35 @@ const ProjectsSection: React.FC = () => {
       },
       visibility: "Public",
     },
+    {
+      title: "JWT Authentication API (.NET 10)",
+      category: "ASP.NET Core API",
+      year: 2026,
+      imageUrl: "/projects/jwt-authentication-api-dotnet10.png",
+      summary:
+        "ASP.NET Core API secured with JWT Authentication, Role-based Authorization, and Refresh Tokens — documented & tested using Scalar API Reference.",
+      tech: [
+        "ASP.NET Core",
+        ".NET 10",
+        "C#",
+        "JWT",
+        "Refresh Tokens",
+        "Role-Based Authorization",
+        "Scalar API Reference",
+      ],
+      highlights: [
+        "Register + Login endpoints",
+        "JWT Access Token generation",
+        "Refresh Token flow",
+        "Admin-only protected route",
+        "Scalar API documentation & testing",
+      ],
+      links: {
+        github: "https://github.com/sruoyveasna/JwtAuthApiDotNet10",
+        live: "https://www.youtube.com/watch?v=HaHm7gKaF5I",
+      },
+      visibility: "Public",
+    },
 
     // ---------------------------
     // Laravel System
@@ -326,6 +355,7 @@ const ProjectsSection: React.FC = () => {
       highlights: ["Student CRUD modules", "Admin-friendly UI structure"],
       links: {
         github: "https://github.com/sruoyveasna/Student_management_system",
+        live: "https://www.youtube.com/watch?v=vGc1rLDOnHU&t=295s",
       },
       visibility: "Public",
     },
