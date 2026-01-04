@@ -175,6 +175,7 @@ const ProjectsSection: React.FC = () => {
       ],
       links: {
         github: "https://github.com/sruoyveasna/Cafe-Eden",
+        live: "https://youtu.be/W-Uk2McifCw",
       },
       visibility: "Public",
     },
@@ -194,6 +195,7 @@ const ProjectsSection: React.FC = () => {
       highlights: ["API integration patterns", "Reusable dashboard components"],
       links: {
         github: "https://github.com/sruoyveasna/Cafe-Eden-Front-end",
+        live: "https://youtu.be/W-Uk2McifCw",
       },
       visibility: "Public",
     },
