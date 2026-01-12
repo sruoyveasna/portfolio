@@ -131,7 +131,7 @@ const ExperienceSection: React.FC = () => {
       title: "WordPress Web Developer",
       type: "Contract",
       start: "Dec 2024",
-      end: "Jan 2025",
+      end: "Dec 2025",
       logoUrl: "experiences/dolphintek.png",
       stack: ["WordPress", "Elementor Pro", "E-commerce", "CMS", "UI Design"],
       highlights: [
